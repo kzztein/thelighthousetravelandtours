@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travel & Tours</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 100px; /* space for fixed navbar */
+  }
+  .package-card img {
+    border-radius: 10px;
+  }
+  .package-card h4 {
+    font-weight: 600;
+  }
+  .package-card p {
+    margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top py-3" style="backdrop-filter: blur(8px); box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="logo.png" alt="Logo" style="height:50px; width:50px; object-fit:cover; border-radius:50%;" class="me-2">
+      THE LIGHTHOUSE
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link text-dark fw-medium" href="booking.html">Booking</a></li>
+        <li class="nav-item"><a class="nav-link text-dark fw-medium" href="promos.html">Events & Promos</a></li>
+        <li class="nav-item"><a class="nav-link text-dark fw-medium" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#contact">Contact</a></li>
+      </ul>
+      <div class="d-flex ms-lg-3">
+        <a href="login.html" class="btn btn-outline-dark me-2 rounded-pill px-4">Sign In</a>
+        <a href="login.html" class="btn btn-primary rounded-pill px-4">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Country Dropdown Filter -->
+<section class="py-3 bg-light">
+  <div class="container d-flex justify-content-center">
+    <div class="dropdown">
+        <h2 class="text-center mb-5">Tour Packages</h2>
+      <button class="btn btn-outline-primary dropdown-toggle rounded-pill px-4" type="button" id="countryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-geo-alt-fill me-2"></i> Select Country
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="countryDropdown">
+        <li><a class="dropdown-item country-item" href="#">Philippines</a></li>
+        <li><a class="dropdown-item country-item" href="#">USA</a></li>
+        <li><a class="dropdown-item country-item" href="#">Japan</a></li>
+        <li><a class="dropdown-item country-item" href="#">France</a></li>
+        <li><a class="dropdown-item country-item" href="#">Australia</a></li>
+        <li><a class="dropdown-item country-item" href="#">Canada</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Modern Elegant Tour Packages -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold display-5">Tour Packages</h2>
+    <div class="row g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card package-card shadow-lg rounded-4 hover-card text-center">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="img-fluid rounded-top mb-3">
+          <div class="card-body">
+            <h5 class="fw-bold mb-2">Mountain Adventure</h5>
+            <p class="text-muted mb-3">Price: $200</p>
+            <button class="btn btn-gradient w-100" onclick="bookTour(this)">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card package-card shadow-lg rounded-4 hover-card text-center">
+          <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce" class="img-fluid rounded-top mb-3">
+          <div class="card-body">
+            <h5 class="fw-bold mb-2">Paris Tour</h5>
+            <p class="text-muted mb-3">Price: $900</p>
+            <button class="btn btn-gradient w-100" onclick="bookTour(this)">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card package-card shadow-lg rounded-4 hover-card text-center">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="img-fluid rounded-top mb-3">
+          <div class="card-body">
+            <h5 class="fw-bold mb-2">Boracay Beach</h5>
+            <p class="text-muted mb-3">Price: $350</p>
+            <button class="btn btn-gradient w-100" onclick="bookTour(this)">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-4">
+        <div class="card package-card shadow-lg rounded-4 hover-card text-center">
+          <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce" class="img-fluid rounded-top mb-3">
+          <div class="card-body">
+            <h5 class="fw-bold mb-2">Tokyo Experience</h5>
+            <p class="text-muted mb-3">Price: $800</p>
+            <button class="btn btn-gradient w-100" onclick="bookTour(this)">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-4">
+        <div class="card package-card shadow-lg rounded-4 hover-card text-center">
+          <img src="https://images.unsplash.com/photo-1491557345352-5929e343eb89" class="img-fluid rounded-top mb-3">
+          <div class="card-body">
+            <h5 class="fw-bold mb-2">Australia Outback</h5>
+            <p class="text-muted mb-3">Price: $1200</p>
+            <button class="btn btn-gradient w-100" onclick="bookTour(this)">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4">
+        <div class="card package-card shadow-lg rounded-4 hover-card text-center">
+          <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088" class="img-fluid rounded-top mb-3">
+          <div class="card-body">
+            <h5 class="fw-bold mb-2">Canada Rockies</h5>
+            <p class="text-muted mb-3">Price: $950</p>
+            <button class="btn btn-gradient w-100" onclick="bookTour(this)">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+.package-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.package-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, #14f0cb, #0b8989);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-gradient:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+flatpickr(".tour-date", {
+  minDate: "today",
+  dateFormat: "Y-m-d"
+});
+
+function bookTour(button) {
+  window.location.href = "login.html";
+}
+
+// Country dropdown click
+document.querySelectorAll('.country-item').forEach(item => {
+  item.addEventListener('click', function(e) {
+    e.preventDefault();
+    const selectedCountry = this.textContent;
+    console.log('Selected Country:', selectedCountry);
+    document.getElementById('countryDropdown').innerHTML = `<i class="bi bi-geo-alt-fill me-2"></i>${selectedCountry}`;
+  });
+});
+</script>
+</body>
+</html>
