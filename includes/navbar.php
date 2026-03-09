@@ -4,7 +4,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 $logged_in = isset($_SESSION['user_id']);
 $user_name = $logged_in ? $_SESSION['user_name'] : '';
 ?>
-<nav class="navbar navbar-expand-lg fixed-top py-3" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top py-3" style="backdrop-filter: blur(8px); box-shadow: 0 2px 8px rgba(0,0,0,0.15);" id="mainNav">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
       <img src="logo.png" alt="The Lighthouse Logo" style="height:50px;width:50px;object-fit:cover;border-radius:50%;">
