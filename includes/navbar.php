@@ -33,7 +33,7 @@ $user_name = $logged_in ? $_SESSION['user_name'] : '';
           <span class="navbar-text fw-medium me-2">Hi, <?= htmlspecialchars($user_name) ?>!</span>
           <a href="logout.php" class="btn btn-outline-danger rounded-pill px-4">Logout</a>
         <?php else: ?>
-          <a href="login.php" class="btn btn-outline-dark rounded-pill px-4">Sign In</a>
+          <a href="login.php" class="btn btn-outline-light rounded-pill px-4">Sign In</a>
           <a href="login.php?tab=signup" class="btn btn-primary rounded-pill px-4">Sign Up</a>
         <?php endif; ?>
       </div>
