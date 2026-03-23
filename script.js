@@ -1,9 +1,17 @@
-// No more localStorage — authentication is handled by PHP sessions now.
-// This file is kept for any future client-side functionality.
+// Navbar — add dark background on scroll, transparent at top
+window.addEventListener('scroll', function () {
+  const nav = document.getElementById('mainNav');
+  if (!nav) return;
+  if (window.scrollY > 60) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
 
-// Smooth scroll to anchor links
+// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+  anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
       e.preventDefault();
