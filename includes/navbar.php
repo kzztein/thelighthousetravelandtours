@@ -7,9 +7,8 @@ $has_hero = ($current_page === 'index.php');
 <nav class="navbar navbar-expand-lg fixed-top py-2" id="mainNav" 
      style="background:<?= $has_hero ? 'transparent' : 'rgba(10,15,40,0.97)' ?> !important; transition: background 0.4s ease, box-shadow 0.4s ease; backdrop-filter: blur(10px);">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
-      <img src="logo.png" alt="The Lighthouse Logo" style="height:52px;width:auto;object-fit:contain;background:transparent;">
-      <span style="color:white;font-weight:700;font-size:1rem;letter-spacing:1px;">THE LIGHTHOUSE</span>
+    <a class="navbar-brand" href="index.php">
+      <img src="logo.png?v=3" alt="The Lighthouse Logo" style="height:80px;width:auto;object-fit:contain;mix-blend-mode:multiply;">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
             style="border-color:rgba(255,255,255,0.4);">
@@ -48,7 +47,6 @@ $has_hero = ($current_page === 'index.php');
 </nav>
 
 <script>
-// Scroll effect only on homepage
 <?php if ($has_hero): ?>
 window.addEventListener('scroll', function () {
   const nav = document.getElementById('mainNav');
