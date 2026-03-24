@@ -4,33 +4,39 @@ $logged_in = isset($_SESSION['user_id']);
 $user_name = $logged_in ? $_SESSION['user_name'] : '';
 $has_hero = ($current_page === 'index.php');
 ?>
-<nav class="navbar navbar-expand-lg fixed-top py-2 <?= $has_hero ? 'navbar-hero' : 'navbar-solid' ?>" id="mainNav">
+<nav class="navbar navbar-expand-lg fixed-top py-2" id="mainNav" 
+     style="background:<?= $has_hero ? 'transparent' : 'rgba(10,15,40,0.97)' ?> !important; transition: background 0.4s ease, box-shadow 0.4s ease; backdrop-filter: blur(10px);">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
       <img src="logo.png" alt="The Lighthouse Logo" style="height:52px;width:auto;object-fit:contain;background:transparent;">
-      <span class="brand-text">THE LIGHTHOUSE</span>
+      <span style="color:white;font-weight:700;font-size:1rem;letter-spacing:1px;">THE LIGHTHOUSE</span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+            style="border-color:rgba(255,255,255,0.4);">
+      <span class="navbar-toggler-icon" style="filter:invert(1);"></span>
     </button>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link <?= $current_page === 'booking.php' ? 'active' : '' ?>" href="booking.php">Booking</a>
+          <a class="nav-link <?= $current_page === 'booking.php' ? 'active' : '' ?>" href="booking.php"
+             style="color:rgba(255,255,255,0.88);font-weight:500;">Booking</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?= $current_page === 'promos.php' ? 'active' : '' ?>" href="promos.php">Events &amp; Promos</a>
+          <a class="nav-link <?= $current_page === 'promos.php' ? 'active' : '' ?>" href="promos.php"
+             style="color:rgba(255,255,255,0.88);font-weight:500;">Events &amp; Promos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?= $current_page === 'about.php' ? 'active' : '' ?>" href="about.php">About Us</a>
+          <a class="nav-link <?= $current_page === 'about.php' ? 'active' : '' ?>" href="about.php"
+             style="color:rgba(255,255,255,0.88);font-weight:500;">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.php#contact">Contact</a>
+          <a class="nav-link" href="index.php#contact"
+             style="color:rgba(255,255,255,0.88);font-weight:500;">Contact</a>
         </li>
       </ul>
       <div class="d-flex ms-lg-3 gap-2">
         <?php if ($logged_in): ?>
-          <span class="navbar-text fw-medium me-2">Hi, <?= htmlspecialchars($user_name) ?>!</span>
+          <span class="navbar-text fw-medium me-2" style="color:white;">Hi, <?= htmlspecialchars($user_name) ?>!</span>
           <a href="logout.php" class="btn btn-outline-light rounded-pill px-4">Logout</a>
         <?php else: ?>
           <a href="login.php" class="btn btn-outline-light rounded-pill px-4">Sign In</a>
@@ -40,3 +46,19 @@ $has_hero = ($current_page === 'index.php');
     </div>
   </div>
 </nav>
+
+<script>
+// Scroll effect only on homepage
+<?php if ($has_hero): ?>
+window.addEventListener('scroll', function () {
+  const nav = document.getElementById('mainNav');
+  if (window.scrollY > 60) {
+    nav.style.background = 'rgba(10,15,40,0.97)';
+    nav.style.boxShadow = '0 2px 16px rgba(0,0,0,0.25)';
+  } else {
+    nav.style.background = 'transparent';
+    nav.style.boxShadow = 'none';
+  }
+});
+<?php endif; ?>
+</script>
